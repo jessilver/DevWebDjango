@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'corsheaders',
+    'veiculo',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -136,6 +137,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'project' / 'static',
+    BASE_DIR / 'veiculo' / 'static',
 ]
 
 # Default primary key field type
@@ -144,3 +146,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Logging configuration
 # https://docs.djangoproject.com/en/5.2/topics/logging/
+
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'

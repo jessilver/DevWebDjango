@@ -1,3 +1,9 @@
+:root {
+    /* --main-color: #6c63ff; */
+    --main-color: #ff983b;
+}
+
+
 html, body {
     height: 100%;
     margin: 0;
@@ -24,4 +30,13 @@ footer {
     .h-custom {
         height: 100%;
     }
+}
+
+.btn-custom{
+    background-color: var(--main-color);
+}
+
+.btn-custom:hover {
+    color: #fff;
+    background-color: grey;
 }
