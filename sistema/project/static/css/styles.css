@@ -1,6 +1,7 @@
 :root {
     /* --main-color: #6c63ff; */
     --main-color: #ff983b;
+    --main-color-hover: #ff7a00;
 }
 
 
@@ -33,10 +34,11 @@ footer {
 }
 
 .btn-custom{
+    color: #fff;
     background-color: var(--main-color);
 }
 
 .btn-custom:hover {
     color: #fff;
-    background-color: grey;
+    background-color: var(--main-color-hover);
 }

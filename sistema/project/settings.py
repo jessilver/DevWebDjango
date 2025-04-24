@@ -30,6 +30,14 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+MY_APPS = [
+    'veiculo',
+]
+
+SEEDER_APPS = [
+    'veiculo',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,10 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'jessilver_django_seed',
     'rest_framework',
     'corsheaders',
-    'veiculo',
-]
+] + MY_APPS
 
 CORS_ORIGIN_ALLOW_ALL = True
 
