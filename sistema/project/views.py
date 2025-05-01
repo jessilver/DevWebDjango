@@ -9,7 +9,9 @@ class Index(View):
     def get(self, request):
         if not request.user.is_authenticated:  
             return redirect('login')
-        return render(request, 'index.html')
+        else:
+            return redirect('listar_veiculos')
+        # return render(request, 'index.html')
 
 class Login(View):
     def get(self, request):

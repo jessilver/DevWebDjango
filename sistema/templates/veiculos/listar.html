@@ -6,29 +6,11 @@
 
 {% block content %}
 
-{% include 'partials/login-navbar.html' %}
+{% include 'partials/navbar.html' %}
 
 <div class="container w-100">
     <div class="card-group pt-5">
-        <div class="row row-cols-5 g-4">
-            {% for veiculo in veiculos %}
-            <div class="col">
-                <div class="card px-3">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
-                    <div class="card-body">
-                    <h5 class="card-title">{{veiculo.modelo}}</h5>
-                    <p class="card-text">
-                        {{veiculo.modelo}}
-                        {{veiculo.get_marca_display}}
-                        {{veiculo.get_combustivel_display}}
-                    </p>
-                    <p class="card-text">
-                        <small class="text-muted">{{veiculo.ano}}</small>
-                    </p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
             {% for veiculo in veiculos %}
             <div class="col">
                 <div class="card px-3">
