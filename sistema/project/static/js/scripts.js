@@ -1,7 +1,7 @@
 // Initialization for ES Users
-import { Collapse, Ripple, initMDB } from "mdb-ui-kit";
+import { Collapse, Ripple, initMDB, Modal, Input} from "mdb-ui-kit";
 
-initMDB({ Collapse, Ripple });
+initMDB({ Collapse, Ripple, Modal, Input });
 
 let form = document.querySelector("#login-form");
 

@@ -32,10 +32,12 @@ ALLOWED_HOSTS = []
 
 MY_APPS = [
     'veiculo',
+    'anuncios',
 ]
 
 SEEDER_APPS = [
     'veiculo',
+    'anuncios'
 ]
 
 INSTALLED_APPS = [
@@ -49,6 +51,7 @@ INSTALLED_APPS = [
     'jessilver_django_seed',
     'rest_framework',
     'corsheaders',
+    'django_dump_die',
 ] + MY_APPS
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -62,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_dump_die.middleware.DumpAndDieMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'

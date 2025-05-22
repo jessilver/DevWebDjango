@@ -11,23 +11,34 @@ class VeiculosSeeder(BaseSeeder):
             {
                 'combustivel': 1,
                 'modelo': 'Fusca',
-                'marca': 1,
+                'marca': 4,
                 'cor': 1,
-                'ano': 1970
+                'ano': 1970,
+                'foto': 'veiculo/fotos/fusca.jpeg'
             },
             {
                 'combustivel': 2,
                 'modelo': 'Civic',
-                'marca': 2,
+                'marca': 5,
                 'cor': 2,
-                'ano': 2020
+                'ano': 2020,
+                'foto': 'veiculo/fotos/civic.jpeg'
             },
             {
                 'combustivel': 3,
                 'modelo': 'Corolla',
-                'marca': 3,
+                'marca': 6,
                 'cor': 3,
-                'ano': 2021
+                'ano': 2021,
+                'foto': 'veiculo/fotos/corola.jpeg'
+            },
+            {
+                'combustivel': 4,
+                'modelo': 'Palio',
+                'marca': 3,
+                'cor': 4,
+                'ano': 2019,
+                'foto': 'veiculo/fotos/palio.jpeg'
             }
         ]
 

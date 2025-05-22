@@ -1,0 +1,26 @@
+{% extends 'layouts/_base.html' %}
+
+{% load static %}
+{% load dump_die %}
+
+{% block title %}Deletar Veiculos{% endblock %}
+
+{% block content %}
+
+{% include 'partials/navbar.html' %}
+
+<div class="container w-100"> 
+    <div class="card-group pt-5 mx-auto justify-content-center">
+        <form action="{% url 'deletar_veiculos' object.pk %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <h5>Você tem certeza que deseja deletar o veiculo {{ object.get_marca_display }} {{ object.modelo }}?</h5>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="{% url 'listar_veiculos' %}" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Fechar</a>
+                <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% include 'partials/footer.html' %}
+{% endblock %}

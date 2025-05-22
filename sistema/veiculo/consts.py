@@ -1,4 +1,5 @@
 OPCOES_MARCAS = (
+    ('', 'Selecione a marca'),
     (1, 'CHEVROLET'),
     (2, 'FORD'),
     (3, 'FIAT'),
@@ -22,6 +23,7 @@ OPCOES_MARCAS = (
 )
 
 OPCOES_CORES = (
+    ('', 'Selecione a cor'),
     (1, 'PRETO'),
     (2, 'BRANCO'),
     (3, 'PRATA'),
@@ -35,9 +37,9 @@ OPCOES_CORES = (
 )
 
 OPCOES_COMBUSTIVEIS = (
+    ('', 'Selecione o combustível'),
     (1, 'ETANOL'),
     (2, 'DIESEL'),
     (3, 'FLEX'),
-    (4, 'FLEX'),
-    (5, 'GASOLINA'),
+    (4, 'GASOLINA'),
 )

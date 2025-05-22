@@ -1,0 +1,48 @@
+{% extends 'layouts/_base.html' %}
+
+{% load static %}
+
+{% block title %}Editar Anúncio{% endblock %}
+
+{% block content %}
+
+{% include 'partials/navbar.html' %}
+
+<div class="container w-100"> 
+    <div class="card-group pt-5 mx-auto justify-content-center row row-cols-1 row-cols-md-2 g-4">
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.veiculo.label }}
+                    {{ form.veiculo }}
+                </div>
+                <div class="mb-3">
+                    {{ form.titulo.label }}
+                    {{ form.titulo }}
+                </div>
+                <div class="mb-3">
+                    {{ form.descricao.label }}
+                    {{ form.descricao }}
+                </div>
+                <div class="mb-3">
+                    {{ form.preco.label }}
+                    {{ form.preco }}
+                </div>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="{% url 'listar_anuncios' %}" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Fechar</a>
+                    <button type="submit" class="btn btn-primary" data-mdb-ripple-init>Salvar</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            {% if object.veiculo.foto %}
+                <img src="{{ object.veiculo.foto.url }}" class="card-img-top" alt="{{ object.veiculo.modelo }}" style="height: 100%; object-fit: cover;"/>
+            {% else %}
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Sem foto" style="height: 100%; object-fit: cover;"/>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% include 'partials/footer.html' %}
+{% endblock %}
