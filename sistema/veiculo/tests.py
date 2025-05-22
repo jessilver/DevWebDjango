@@ -93,7 +93,6 @@ class TesteEditarVeiculo(TestCase):
         self.assertIsInstance(response.context['form'], VeiculoForm)
         self.assertEqual(response.context['object'].pk, self.veiculo.pk)
         self.assertEqual(response.context['object'].marca, 1)
-        pass
  
     def test_post(self):
         data = {
