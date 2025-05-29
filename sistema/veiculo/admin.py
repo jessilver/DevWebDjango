@@ -10,7 +10,6 @@ for app_name in MY_APPS:
             fields = [field.name for field in model._meta.fields]
             class AutoAdmin(admin.ModelAdmin):
                 list_display = fields
-                search_fields = [field.name for field in model._meta.fields if field.name == 'marca']
             admin.site.register(model, AutoAdmin)
         except admin.sites.AlreadyRegistered:
             pass

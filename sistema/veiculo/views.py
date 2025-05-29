@@ -8,6 +8,11 @@ from veiculo.forms import VeiculoForm
 from django.urls import reverse_lazy
 from veiculo.models import Veiculo
 from django.views import View
+from .serializers import VeiculoSerializer
+
+from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.authentication import TokenAuthentication, BasicAuthentication
+from rest_framework import permissions
 
 class ListarVeiculos(LoginRequiredMixin,View):
     template_name = 'veiculos/listar.html'
@@ -54,3 +59,27 @@ class DeletarVeiculos(LoginRequiredMixin, DeleteView):
     model = Veiculo
     template_name = 'veiculos/deletar.html'
     success_url = reverse_lazy('listar_veiculos')
+
+
+class VeiculoListView(ListAPIView):
+    serializer_class = VeiculoSerializer
+    authentication_classes = [TokenAuthentication, BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Veiculo.objects.all()
+
+    def get_queryset(self):
+        return Veiculo.objects.all()
+
+#########################################
+
+class VeiculoListCreateView(ListCreateAPIView):
+    serializer_class = VeiculoSerializer
+    authentication_classes = [TokenAuthentication, BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Veiculo.objects.all()
+
+class VeiculoRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    serializer_class = VeiculoSerializer
+    authentication_classes = [TokenAuthentication, BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Veiculo.objects.all()

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_!_iih1vu$$1+=&mk2tf#(%t9e-qarz@&gb#)u$h*5&-fnljt5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,9 +49,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'jessilver_django_seed',
+
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
+
     'django_dump_die',
+    'drf_yasg',
 ] + MY_APPS
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -84,6 +88,18 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    # 'PAGE_SIZE': 10,
+}
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -161,3 +177,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
+
+CORS_ORIGIN_ALLOW_ALL = True

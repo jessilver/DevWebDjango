@@ -5,6 +5,10 @@ from django.urls import reverse_lazy
 from django.views import View
 from .models import Anuncio
 from .forms import AnuncioForm
+from .serializers import AnuncioSerializer
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.authentication import TokenAuthentication, BasicAuthentication
+from rest_framework import permissions
 
 class ListarAnuncios(LoginRequiredMixin, View):
     template_name = 'anuncios/listar.html'
@@ -38,3 +42,16 @@ class DeletarAnuncio(LoginRequiredMixin, DeleteView):
     model = Anuncio
     template_name = 'anuncios/deletar.html'
     success_url = reverse_lazy('listar_anuncios')
+
+
+class AnuncioListCreateView(ListCreateAPIView):
+    serializer_class = AnuncioSerializer
+    authentication_classes = [TokenAuthentication, BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Anuncio.objects.all()
+
+class AnuncioRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
+    serializer_class = AnuncioSerializer
+    authentication_classes = [TokenAuthentication, BasicAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+    queryset = Anuncio.objects.all()
